@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高端产品展示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        body { scroll-behavior: smooth; }
+        .gradient-text { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .fade-in { animation: fadeIn 0.8s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hover-scale { transition: transform 0.3s ease; }
+        .hover-scale:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 via-white to-gray-50">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-2xl font-bold gradient-text">Premium</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-blue-600 transition-colors">特性</a>
+                    <a href="#specs" class="text-gray-700 hover:text-blue-600 transition-colors">规格</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-blue-600 transition-colors">图集</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- 图片区域 -->
+                <div class="fade-in">
+                    <div class="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=800&fit=crop" 
+                             alt="产品主图" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-medium text-gray-700">
+                            🔍 点击放大
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-3 mt-4">
+                        <div class="aspect-square rounded-xl overflow-hidden border-2 border-blue-600 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&h=200&fit=crop" alt="缩略图1" class="w-full h-full object-cover">
+                        </div>
+                        <div class="aspect-square rounded-xl overflow-hidden border-2 border-gray-200">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&h=200&fit=crop" alt="缩略图2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="aspect-square rounded-xl overflow-hidden border-2 border-gray-200">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&h=200&fit=crop" alt="缩略图3" class="w-full h-full object-cover">
+                        </div>
+                        <div class="aspect-square rounded-xl overflow-hidden border-2 border-gray-200">
+                            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=200&h=200&fit=crop" alt="缩略图4" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品信息 -->
+                <div class="fade-in space-y-6">
+                    <span class="inline-block px-4 py-1.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold rounded-full">新品上市</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                        高端智能产品<br>
+                        <span class="gradient-text">卓越体验</span>
+                    </h1>
+                    <div class="flex items-baseline space-x-3">
+                        <span class="text-4xl font-bold text-gray-900">¥9,999</span>
+                        <span class="text-xl text-gray-500 line-through">¥12,999</span>
+                        <span class="px-3 py-1 bg-red-100 text-red-600 text-sm font-semibold rounded-full">限时优惠</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="flex text-yellow-400 text-2xl">★★★★★</div>
+                        <span class="text-gray-600 font-medium">4.9</span>
+                        <span class="text-gray-400">(1,234 条评价)</span>
+                    </div>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        采用最新技术打造，融合优雅设计与卓越性能。每一处细节都经过精心雕琢，
+                        为您带来无与伦比的使用体验。无论是工作还是生活，都能完美满足您的需求。
+                    </p>
+                    <div class="space-y-3">
+                        <label class="text-sm font-semibold text-gray-700">选择颜色</label>
+                        <div class="flex space-x-3">
+                            <button class="px-6 py-2.5 bg-blue-600 text-white rounded-lg font-medium shadow-lg">黑色</button>
+                            <button class="px-6 py-2.5 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200">银色</button>
+                            <button class="px-6 py-2.5 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200">金色</button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button class="flex-1 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover-scale">
+                            立即购买
+                        </button>
+                        <button class="flex-1 px-8 py-4 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-blue-600 hover:text-blue-600 transition-all">
+                            加入购物车
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-gray-200">
+                        <div class="text-center"><div class="text-2xl mb-1">🚚</div><div class="text-sm text-gray-600">免费配送</div></div>
+                        <div class="text-center"><div class="text-2xl mb-1">↩️</div><div class="text-sm text-gray-600">7天退换</div></div>
+                        <div class="text-center"><div class="text-2xl mb-1">🛡️</div><div class="text-sm text-gray-600">正品保障</div></div>
+                        <div class="text-center"><div class="text-2xl mb-1">💳</div><div class="text-sm text-gray-600">安全支付</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特性展示 -->
+    <section id="features" class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">产品特性</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">每一个细节都经过精心设计，为您带来卓越的使用体验</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">卓越性能</h3>
+                    <p class="text-gray-600 leading-relaxed">搭载最新处理器，运行速度提升50%，轻松应对各种复杂任务。</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+                    <div class="text-5xl mb-4">🎨</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">精美设计</h3>
+                    <p class="text-gray-600 leading-relaxed">采用航空级铝合金材质，经过精密加工，每一处都彰显品质。</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+                    <div class="text-5xl mb-4">🔋</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">超长续航</h3>
+                    <p class="text-gray-600 leading-relaxed">智能电源管理系统，一次充电可使用长达24小时，告别电量焦虑。</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+                    <div class="text-5xl mb-4">📸</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">专业影像</h3>
+                    <p class="text-gray-600 leading-relaxed">配备专业级摄像头系统，支持4K视频录制，记录每一个精彩瞬间。</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+                    <div class="text-5xl mb-4">🔒</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">安全可靠</h3>
+                    <p class="text-gray-600 leading-relaxed">多重安全防护机制，保护您的隐私和数据安全，使用更安心。</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+                    <div class="text-5xl mb-4">🌐</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">智能互联</h3>
+                    <p class="text-gray-600 leading-relaxed">支持5G网络和Wi-Fi 6，随时随地享受高速网络连接体验。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-12 md:p-16 text-white text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">准备好体验卓越品质了吗？</h2>
+                <p class="text-xl md:text-2xl mb-8 text-blue-100">立即下单，享受限时优惠和免费配送服务</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="px-10 py-4 bg-white text-blue-600 font-bold text-lg rounded-xl shadow-xl hover-scale">立即购买</button>
+                    <button class="px-10 py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white font-bold text-lg rounded-xl hover:bg-white/20 transition-all">了解更多</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-12 text-center">
+        <p class="text-gray-400">© 2024 Premium Product. 保留所有权利。</p>
+    </footer>
+</body>
+</html>
