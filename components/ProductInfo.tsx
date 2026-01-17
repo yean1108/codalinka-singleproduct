@@ -1,15 +1,47 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-export default function ProductInfo() {
+interface ProductInfoProps {
+  onColorChange?: (color: string) => void
+}
+
+export default function ProductInfo({ onColorChange }: ProductInfoProps) {
   const [quantity, setQuantity] = useState(1)
-  const [selectedColor, setSelectedColor] = useState('Black')
+  const [selectedColor, setSelectedColor] = useState('Silver')
   const [selectedSize, setSelectedSize] = useState('Standard')
 
-  const colors = ['Black', 'Silver', 'Gold', 'Space Gray']
+  const colors = ['Silver', 'Black', 'Golden', 'Space Gray']
   const sizes = ['Standard', 'Pro', 'Ultimate']
+  
+  // Color image mapping
+  const colorImages: Record<string, string> = {
+    'Silver': '/images/CodaPhone-Silver.png',
+    'Black': '/images/CodaPhone-Black.png',
+    'Golden': '/images/CodaPhone-Golden.png',
+    'Space Gray': '/images/CodaPhone-Spacegrey.png',
+  }
+
+  // Version pricing mapping
+  const versionPricing: Record<string, { current: number; original: number }> = {
+    'Standard': { current: 999, original: 1299 },
+    'Pro': { current: 1299, original: 1599 },
+    'Ultimate': { current: 1599, original: 1999 },
+  }
+
+  const currentPrice = versionPricing[selectedSize]?.current || 999
+  const originalPrice = versionPricing[selectedSize]?.original || 1299
+
+  useEffect(() => {
+    if (onColorChange) {
+      onColorChange(selectedColor)
+    }
+  }, [selectedColor, onColorChange])
+
+  const handleColorChange = (color: string) => {
+    setSelectedColor(color)
+  }
 
   const handleAddToCart = () => {
     // Add to cart logic
@@ -42,22 +74,23 @@ export default function ProductInfo() {
         transition={{ delay: 0.4 }}
         className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
       >
-        Premium Smart Product
+        CodaPhone
         <br />
         <span className="text-gray-600">
-          Exceptional Experience
+          Exceptional Experience, Infinite Possibilities
         </span>
       </motion.h1>
 
       {/* Price */}
       <motion.div
+        key={selectedSize}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
         className="flex items-baseline space-x-3"
       >
-        <span className="text-4xl font-bold text-gray-900">$999</span>
-        <span className="text-xl text-gray-500 line-through">$1,299</span>
+        <span className="text-4xl font-bold text-gray-900">${currentPrice.toLocaleString()}</span>
+        <span className="text-xl text-gray-500 line-through">${originalPrice.toLocaleString()}</span>
         <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm font-semibold rounded-full">
           Limited Offer
         </span>
@@ -86,8 +119,8 @@ export default function ProductInfo() {
         transition={{ delay: 0.7 }}
         className="text-lg text-gray-600 leading-relaxed"
       >
-        Crafted with cutting-edge technology, combining elegant design with exceptional performance. 
-        Every detail is meticulously crafted to deliver an unparalleled user experience. 
+        CodaPhone features cutting-edge technology, combining elegant design with exceptional performance.
+        Every detail is meticulously crafted to deliver an unparalleled user experience.
         Perfect for both work and life, meeting all your needs.
       </motion.p>
 
@@ -103,7 +136,7 @@ export default function ProductInfo() {
           {colors.map((color) => (
             <button
               key={color}
-              onClick={() => setSelectedColor(color)}
+              onClick={() => handleColorChange(color)}
               className={`px-6 py-2.5 rounded-lg font-medium transition-all ${
                 selectedColor === color
                   ? 'bg-gray-800 text-white shadow-lg scale-105'
@@ -200,7 +233,7 @@ export default function ProductInfo() {
       >
         {[
           { icon: '🚚', text: 'Free Shipping' },
-          { icon: '↩️', text: '7-Day Returns' },
+          { icon: '↩️', text: '14 Days Return' },
           { icon: '🛡️', text: 'Authentic Guarantee' },
           { icon: '💳', text: 'Secure Payment' },
         ].map((item, index) => (

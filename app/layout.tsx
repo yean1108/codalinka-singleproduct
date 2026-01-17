@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Premium Product | High-End Product Showcase',
-  description: 'Explore our premium products and experience exceptional quality',
+  title: 'CodaPhone | Exceptional Experience, Infinite Possibilities',
+  description: 'Explore CodaPhone, experience the perfect fusion of cutting-edge technology and elegant design',
 }
 
 export default function RootLayout({

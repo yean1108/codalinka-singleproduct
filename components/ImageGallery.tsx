@@ -6,23 +6,23 @@ import { motion, AnimatePresence } from 'framer-motion'
 const images = [
   {
     id: 1,
-    url: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=800&fit=crop',
-    alt: '产品主图 1',
+    url: '/images/CodaPhone-Silver.png',
+    alt: 'CodaPhone Silver - Front View',
   },
   {
     id: 2,
-    url: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=800&fit=crop',
-    alt: '产品主图 2',
+    url: '/images/CodaPhone-Silver.png',
+    alt: 'CodaPhone Silver - Side View',
   },
   {
     id: 3,
-    url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=800&fit=crop',
-    alt: '产品主图 3',
+    url: '/images/CodaPhone-Silver.png',
+    alt: 'CodaPhone Silver - Back View',
   },
   {
     id: 4,
-    url: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800&h=800&fit=crop',
-    alt: '产品主图 4',
+    url: '/images/CodaPhone-Silver.png',
+    alt: 'CodaPhone Silver - Detail View',
   },
 ]
 
@@ -32,7 +32,7 @@ export default function ImageGallery() {
 
   return (
     <div className="space-y-4">
-      {/* 主图 */}
+      {/* Main Image */}
       <motion.div
         className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-2xl cursor-zoom-in"
         whileHover={{ scale: 1.02 }}
@@ -52,13 +52,13 @@ export default function ImageGallery() {
           />
         </AnimatePresence>
         
-        {/* 放大指示器 */}
+        {/* Zoom Indicator */}
         <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-medium text-gray-700">
-          <span className="mr-1">🔍</span>点击放大
+          <span className="mr-1">🔍</span>Click to Zoom
         </div>
       </motion.div>
 
-      {/* 缩略图 */}
+      {/* Thumbnails */}
       <div className="grid grid-cols-4 gap-3">
         {images.map((image, index) => (
           <motion.button
@@ -88,7 +88,7 @@ export default function ImageGallery() {
         ))}
       </div>
 
-      {/* 全屏放大视图 */}
+      {/* Fullscreen Zoom View */}
       <AnimatePresence>
         {isZoomed && (
           <motion.div

@@ -9,6 +9,7 @@ import CTA from '@/components/CTA'
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [selectedColor, setSelectedColor] = useState('Silver')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +18,13 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const colorImages: Record<string, string> = {
+    'Silver': '/images/CodaPhone-Silver.png',
+    'Black': '/images/CodaPhone-Black.png',
+    'Golden': '/images/CodaPhone-Golden.png',
+    'Space Gray': '/images/CodaPhone-Spacegrey.png',
+  }
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
@@ -38,7 +46,7 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="text-2xl font-bold text-gray-800"
             >
-              Premium
+              CodaPhone
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
@@ -69,13 +77,19 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="order-2 lg:order-1"
             >
-              <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-lg">
+              <motion.div 
+                className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-lg"
+                key={selectedColor}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+              >
                 <img
-                  src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=800&fit=crop"
-                  alt="Premium Smart Product"
-                  className="w-full h-full object-cover"
+                  src={colorImages[selectedColor] || colorImages['Silver']}
+                  alt={`CodaPhone ${selectedColor}`}
+                  className="w-full h-full object-contain"
                 />
-              </div>
+              </motion.div>
             </motion.div>
 
             {/* Product Info */}
@@ -85,7 +99,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="order-1 lg:order-2"
             >
-              <ProductInfo />
+              <ProductInfo onColorChange={setSelectedColor} />
             </motion.div>
           </div>
         </section>
@@ -116,7 +130,7 @@ export default function Home() {
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gray-400">
-            © 2024 Premium Product. All rights reserved.
+            © 2024 CodaPhone. All rights reserved.
           </p>
         </div>
       </footer>

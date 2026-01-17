@@ -6,14 +6,14 @@ const specs = [
   { category: 'Processor', value: 'Latest Generation High-Performance Processor' },
   { category: 'Memory', value: '16GB LPDDR5' },
   { category: 'Storage', value: '512GB / 1TB / 2TB SSD' },
-  { category: 'Display', value: '13.3-inch Retina Display' },
-  { category: 'Resolution', value: '2560 × 1600 pixels' },
-  { category: 'Camera', value: '1080p FaceTime HD Camera' },
+  { category: 'Display', value: '6.7-inch Super Retina Display' },
+  { category: 'Resolution', value: '2778 × 1284 pixels' },
+  { category: 'Camera', value: '48MP Main Camera with 4K Video Support' },
   { category: 'Audio', value: 'Stereo Speakers with Spatial Audio Support' },
-  { category: 'Connectivity', value: 'Wi-Fi 6E, Bluetooth 5.3' },
-  { category: 'Ports', value: '2 × USB-C (Thunderbolt 4)' },
+  { category: 'Connectivity', value: 'Wi-Fi 6E, Bluetooth 5.3, 5G' },
+  { category: 'Ports', value: 'USB-C (Fast Charging & Data Transfer)' },
   { category: 'Battery', value: 'Up to 24 hours battery life' },
-  { category: 'Weight', value: '1.29 kg' },
+  { category: 'Weight', value: 'Approx. 200g' },
   { category: 'Operating System', value: 'Latest Operating System' },
 ]
 
@@ -32,7 +32,7 @@ export default function ProductSpecs() {
           Technical Specifications
         </h2>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Discover the detailed technical specifications of our product
+          Discover the detailed technical specifications of CodaPhone
         </p>
       </motion.div>
 
