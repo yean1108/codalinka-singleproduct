@@ -1,84 +1,83 @@
-# 高端单产品展示页面
+# Premium Single Product Showcase
 
-一个视觉效果出色的单产品展示页面，采用 Next.js 14、TypeScript、Tailwind CSS 和 Framer Motion 构建。
+A visually stunning single product showcase page built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
 
-## 特性
+## Features
 
-- 🎨 现代化的 UI 设计
-- 📱 完全响应式布局
-- ✨ 流畅的动画效果
-- 🖼️ 图片画廊和放大功能
-- 🎯 产品信息展示
-- 📋 技术规格展示
-- 🚀 优化的性能
+- 🎨 Modern UI design
+- 📱 Fully responsive layout
+- ✨ Smooth animations
+- 🖼️ Product image display
+- 🎯 Product information showcase
+- 📋 Technical specifications
+- 🚀 Optimized performance
 
-## 技术栈
+## Tech Stack
 
-- **Next.js 14** - React 框架
-- **TypeScript** - 类型安全
-- **Tailwind CSS** - 样式框架
-- **Framer Motion** - 动画库
+- **Next.js 14** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling framework
+- **Framer Motion** - Animation library
 
-## 开始使用
+## Getting Started
 
-### 安装依赖
+### Install Dependencies
 
 ```bash
 npm install
-# 或
+# or
 yarn install
-# 或
+# or
 pnpm install
 ```
 
-### 运行开发服务器
+### Run Development Server
 
 ```bash
 npm run dev
-# 或
+# or
 yarn dev
-# 或
+# or
 pnpm dev
 ```
 
-在浏览器中打开 [http://localhost:3000](http://localhost:3000) 查看页面。
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the page.
 
-### 构建生产版本
+### Build for Production
 
 ```bash
 npm run build
 npm start
 ```
 
-## 项目结构
+## Project Structure
 
 ```
 single-product/
 ├── app/
-│   ├── globals.css      # 全局样式
-│   ├── layout.tsx       # 根布局
-│   └── page.tsx         # 主页面
+│   ├── globals.css      # Global styles
+│   ├── layout.tsx       # Root layout
+│   └── page.tsx         # Main page
 ├── components/
-│   ├── ImageGallery.tsx    # 图片画廊组件
-│   ├── ProductInfo.tsx     # 产品信息组件
-│   ├── ProductFeatures.tsx # 产品特性组件
-│   ├── ProductSpecs.tsx    # 产品规格组件
-│   └── CTA.tsx             # 行动号召组件
+│   ├── ProductInfo.tsx     # Product information component
+│   ├── ProductFeatures.tsx # Product features component
+│   ├── ProductSpecs.tsx    # Product specifications component
+│   └── CTA.tsx             # Call-to-action component
 ├── package.json
 ├── tailwind.config.js
 └── tsconfig.json
 ```
 
-## 自定义
+## Customization
 
-您可以轻松自定义：
+You can easily customize:
 
-- 产品图片：修改 `components/ImageGallery.tsx` 中的 `images` 数组
-- 产品信息：修改 `components/ProductInfo.tsx` 中的内容
-- 产品特性：修改 `components/ProductFeatures.tsx` 中的 `features` 数组
-- 技术规格：修改 `components/ProductSpecs.tsx` 中的 `specs` 数组
-- 颜色主题：修改 `tailwind.config.js` 中的颜色配置
+- Product image: Modify the image URL in `app/page.tsx`
+- Product information: Modify content in `components/ProductInfo.tsx`
+- Product features: Modify the `features` array in `components/ProductFeatures.tsx`
+- Technical specifications: Modify the `specs` array in `components/ProductSpecs.tsx`
+- Color theme: Modify color configuration in `tailwind.config.js`
 
-## 许可证
+## License
 
 MIT
